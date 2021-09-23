@@ -19,8 +19,8 @@ module.exports = function( logs ) {
 			env.IRC_SERVER,
 			env.IRC_BOT_NICK,
 			{
-				userName: env.IRC_BOT_USERNAME || 'nodelogger',
-				userName: env.IRC_BOT_REALNAME || 'nodeJS IRC logger',
+				userName: env.IRC_BOT_USERNAME || 'showchat',
+				userName: env.IRC_BOT_REALNAME || 'www.showchat.tk',
 				password: env.IRC_BOT_PASSWORD || null,
 				channels: channels,
 				stripColors: true
@@ -36,7 +36,7 @@ module.exports = function( logs ) {
 			if( env.NODE_ENV == 'development' ) console.log( 'message from ' + from + ' on ' + to + ': ' + message );
 			if( logs[ to ] instanceof Array ) {
 				logs[ to ].push({ from: from, message: message, stamp: (new Date).getTime() });
-				if( logs[ to ].length > 1000 ) logs[ to ] = logs[ to ].slice( -1000 );
+				if( logs[ to ].length > 10000 ) logs[ to ] = logs[ to ].slice( -10000 );
 			}
 		});
 
