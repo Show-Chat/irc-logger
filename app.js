@@ -9,7 +9,7 @@ var express = require('express')
   , http = require("http");
     setInterval(function() {
     http.get("https://showchat.herokuapp.com");
-}, 3000000); // every 5 minutes (300000)
+}, 5 * 60 * 1000); // every 5 minutes (300000)
 
 var app = express();
 
